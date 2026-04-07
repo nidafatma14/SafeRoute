@@ -56,3 +56,4 @@ Database Integration: Migration to MongoDB Geospatial (2dsphere indexing) for co
 Live GPS Tracking: Capturing real-time user location via the browser's Geolocation API.
 
 Community Reporting: Allowing users to "crowdsource" safety updates (e.g., reporting a broken streetlight).
+<img width="912" height="810" alt="Screenshot 2026-04-07 211456" src="https://github.com/user-attachments/assets/20d626a2-a88c-422b-8bf4-8e31868e74da" />
