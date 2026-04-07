@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# 🗺️ SafeRoute: Smart Safety Navigation System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**SafeRoute** is a decoupled full-stack application designed to provide users with real-time safety visualizations of urban areas. By utilizing a custom **Weighted Scoring Algorithm**, the system evaluates environmental factors to generate a hyper-local safety score, helping users make informed decisions about their travel routes.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Key Features
+* **Interactive Map Overlay:** Integration with Leaflet.js for dynamic visualization of Kolkata's safety zones.
+* **Weighted Safety Algorithm:** A backend logic engine that calculates scores based on:
+    * **50% Lighting Levels** (Street illumination)
+    * **30% Police Proximity** (Emergency response availability)
+    * **20% Crime History** (Historical data trends)
+* **Decoupled Architecture:** Separate React frontend and Spring Boot backend for independent scalability.
+* **RESTful API:** Clean API endpoints for data exchange via JSON.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **Frontend**
+* **React.js**: Functional components and Hooks (`useState`, `useEffect`).
+* **Leaflet.js**: Open-source JavaScript library for interactive maps.
+* **React-Leaflet**: React components for Leaflet maps.
+* **CSS3**: Custom styling for responsive UI overlays.
 
-### `npm test`
+### **Backend**
+* **Java (JDK 17/21)**: Core programming language.
+* **Spring Boot**: REST API development and dependency injection.
+* **Maven**: Project management and build automation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **Data & Deployment**
+* **GitHub**: Version control.
+* **Vercel**: Cloud hosting for the React frontend.
+* **Postman**: API testing and documentation.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📂 Project Structure
+```text
+SafeRoute/
+├── saferoute-ui/           # React Frontend
+│   ├── src/
+│   │   ├── App.js         # Main logic & API Fetch
+│   │   └── App.css        # Map & UI styling
+│   └── public/            # index.html (Leaflet CDN)
+└── saferoute-backend/      # Spring Boot Backend
+    ├── src/main/java/
+    │   └── com.nida.saferoute/
+    │       ├── SafetyController.java  # REST Endpoints
+    │       └── SafetyService.java     # Weighted Algorithm Logic
+    └── pom.xml             # Maven Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Future Roadmap
+Database Integration: Migration to MongoDB Geospatial (2dsphere indexing) for coordinate-based searching.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Live GPS Tracking: Capturing real-time user location via the browser's Geolocation API.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Community Reporting: Allowing users to "crowdsource" safety updates (e.g., reporting a broken streetlight).
